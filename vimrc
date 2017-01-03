@@ -1,3 +1,4 @@
+let g:tex_comment_nospell=1 " 不检查 tex 文档的注释区域拼写 
 
 call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plugin List
