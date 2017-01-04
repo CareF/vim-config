@@ -13,7 +13,9 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'Yggdroot/indentLine'  " 显示缩进标记线 
 " Plug 'scrooloose/syntastic' " 语法检查器，非常有用
 " Plug 'majutsushi/tagbar' " 类/函数/方法列表
-Plug 'vim-latex/vim-latex'
+" Plug 'vim-latex/vim-latex'          " LaTeX 支持打包
+Plug 'SirVer/ultisnips'             " snippets 支持插件
+Plug 'honza/vim-snippets'           " 一个 snippet 合集
 Plug 'godlygeek/tabular'            " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'      " Markdown 整理和语法高亮
 Plug 'suan/vim-instant-markdown'    " 自动编译显示 markdown
@@ -23,7 +25,7 @@ call plug#end()
 
 set hidden            " buffer 后台
 set autochdir         " 打开文件时，自动 cd 到文件所在目录
-set pastetoggle=<F9>  " 粘贴模式, 暂时关闭自动缩进
+set pastetoggle=<C-p>  " 粘贴模式, 暂时关闭自动缩进
 set formatoptions+=mM " 允许对multi_byte字符换行 (m), 并避免在行合并时补空格 (M)
 set textwidth=77      " 设置自动换行
 autocmd FileType html set textwidth=0
@@ -66,3 +68,5 @@ hi SpellRare cterm=underline,bold
 source ~/.vim/config/vim-markdown.vim
 source ~/.vim/config/python-mode.vim
 source ~/.vim/config/rainbow_parentheses.vim
+source ~/.vim/config/vim-instant-markdown.vim
+" source ~/.vim/config/vim-latex.vim
