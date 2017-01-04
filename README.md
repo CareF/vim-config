@@ -1,12 +1,21 @@
-# Vim config file # 
+# Vim configuration file # 
 
 边学边改咯, git 的提交记录大概可以看做是个学习记录了. 
 
 包管理使用 vim-plug
 
------ 
+--------
+## To lean# 
 
-## licence ##
+- [ ] LaTeX 环境搭建
+- [ ] 分栏的使用和相关插件
+- [ ] 添加时间戳并且在 YAML 自动更新 
+- [ ] 熟悉自动补全
+- [ ] snippet 编写和迁移 ([这里](http://mednoter.com/UltiSnips.html))
+
+--------
+
+## License ##
 
 **["THE COFFEEWARE LICENSE" (Revision
 2)](https://github.com/Jmlevick/coffeeware-license):**
