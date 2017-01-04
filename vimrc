@@ -1,7 +1,7 @@
 let g:tex_comment_nospell=1 " 不检查 tex 文档的注释区域拼写 
 
 call plug#begin('~/.vim/bundle') " vim-plug 初始化
-" Plugin List
+" Plugin List 列表
 " Plug 'jrosiek/vim-mark'
 " Plug 'bling/vim-airline'
 " Plug 'rking/ag.vim'
@@ -9,11 +9,13 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'Yggdroot/indentLine'
 " Plug 'Valloric/MatchTagAlways'
 " Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
-" Plug 'scrooloose/nerdtree' " 文件列表
+" Plug 'scrooloose/nerdtree',{ 'on':  'NERDTreeToggle' } " 文件列表, on-demand load
 " Plug 'Yggdroot/indentLine'  " 显示缩进标记线 
 " Plug 'scrooloose/syntastic' " 语法检查器，非常有用
 " Plug 'majutsushi/tagbar' " 类/函数/方法列表
 " Plug 'vim-latex/vim-latex'          " LaTeX 支持打包
+Plug 'lervag/vimtex'                " LaTeX 支持 
+Plug 'lilydjwg/fcitx.vim'           " fcitx-IME 支持
 Plug 'SirVer/ultisnips'             " snippets 支持插件
 Plug 'honza/vim-snippets'           " 一个 snippet 合集
 Plug 'godlygeek/tabular'            " Required by vim-markdown
@@ -25,7 +27,8 @@ call plug#end()
 
 set hidden            " buffer 后台
 set autochdir         " 打开文件时，自动 cd 到文件所在目录
-set pastetoggle=<C-p>  " 粘贴模式, 暂时关闭自动缩进
+set ttimeoutlen=100   " 设置超时, 为了 vim-fcitx IME 支持不要导致太长的延迟
+set pastetoggle=<C-p> " 粘贴模式, 暂时关闭自动缩进
 set formatoptions+=mM " 允许对multi_byte字符换行 (m), 并避免在行合并时补空格 (M)
 set textwidth=77      " 设置自动换行
 autocmd FileType html set textwidth=0
