@@ -8,12 +8,12 @@
 
 ## To lean 
 
-- [ ] LaTeX 环境搭建
+- [*] LaTeX 环境搭建
 - [ ] 分栏的使用和相关插件
 - [ ] 添加时间戳并且在 YAML 自动更新 
-- [ ] 熟悉自动补全
+- [*] 熟悉自动补全
 - [ ] snippet 编写和迁移 ([这里](http://mednoter.com/UltiSnips.html))
-- [ ] YouCompleteMe 学习
+- [*] YouCompleteMe 学习
 
 --------
 

@@ -6,7 +6,6 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'bling/vim-airline'
 " Plug 'rking/ag.vim'
 " Plug 'kien/ctrlp.vim'
-" Plug 'Yggdroot/indentLine'
 " Plug 'Valloric/MatchTagAlways'
 " Plug 'scrooloose/nerdtree',{ 'on':  'NERDTreeToggle' } " 文件列表, on-demand load
 " Plug 'Yggdroot/indentLine'  " 显示缩进标记线 
@@ -14,6 +13,7 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'majutsushi/tagbar' " 类/函数/方法列表
 " Plug 'vim-latex/vim-latex'          " LaTeX 支持打包
 Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
+Plug 'Yggdroot/indentLine'          " 在缩进语言前加对齐竖线
 Plug 'lervag/vimtex'                " LaTeX 支持 
 Plug 'lilydjwg/fcitx.vim'           " fcitx-IME 支持
 Plug 'SirVer/ultisnips'             " snippets 支持插件
@@ -25,10 +25,11 @@ Plug 'python-mode/python-mode'      " Python 语法检查, 运行, 文档等
 Plug 'kien/rainbow_parentheses.vim' " 使用不同颜色标记各级括号
 call plug#end()
 
+set directory=~/.vim/.swapfiles// " 写临时文件
 set hidden            " buffer 后台
 set autochdir         " 打开文件时，自动 cd 到文件所在目录
 set ttimeoutlen=100   " 设置超时, 为了 vim-fcitx IME 支持不要导致太长的延迟
-set pastetoggle=<C-p> " 粘贴模式, 暂时关闭自动缩进
+set pastetoggle=<F9> " 粘贴模式, 暂时关闭自动缩进
 set formatoptions+=mM " 允许对multi_byte字符换行 (m), 并避免在行合并时补空格 (M)
 set textwidth=77      " 设置自动换行
 autocmd FileType html set textwidth=0
@@ -38,8 +39,9 @@ filetype on               " 打开文件类型支持
 filetype plugin on        " 打开文件类型插件支持
 filetype indent on        " 打开文件类型缩进支持
 set number                " 显示行号
-set so=5                  " 光标移动到倒数第5行时开始滚屏
+set scrolloff=5           " 光标移动到倒数第5行时开始滚屏
 set autoindent            " 自动缩进
+set cindent               " 对于 C 系列的缩进优化
 set modeline              " 底部的模式行
 set cursorline            " 高亮光标所在行
 set cursorcolumn          " 高亮光标所在列
@@ -104,4 +106,6 @@ source ~/.vim/config/python-mode.vim
 source ~/.vim/config/rainbow_parentheses.vim
 source ~/.vim/config/vim-instant-markdown.vim
 source ~/.vim/config/vimtex.vim
+source ~/.vim/config/youcompleteme.vim
+source ~/.vim/config/indentline.vim
 " source ~/.vim/config/vim-latex.vim
