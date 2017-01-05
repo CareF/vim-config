@@ -12,6 +12,7 @@
 - [ ] 添加时间戳并且在 YAML 自动更新 
 - [ ] 熟悉自动补全
 - [ ] snippet 编写和迁移 ([这里](http://mednoter.com/UltiSnips.html))
+- [ ] YouCompleteMe 学习
 
 --------
 

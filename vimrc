@@ -44,7 +44,7 @@ set modeline              " 底部的模式行
 set cursorline            " 高亮光标所在行
 set cursorcolumn          " 高亮光标所在列
 set showmatch             " 高亮括号配对
-set conceallevel=2        " 语法隐藏: eg. Markdown [text](url) show as text
+set conceallevel=0        " 语法隐藏: eg. Markdown [text](url) show as text
 let g:tex_conceal='abdgs' " tex 的代码隐藏规则
 
 " 设置缩进宽度为 4 个空格
