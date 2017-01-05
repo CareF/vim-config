@@ -1,4 +1,4 @@
-# Vim configuration file # 
+# Vim configuration file 
 
 边学边改咯, git 的提交记录大概可以看做是个学习记录了. 
 
@@ -6,7 +6,7 @@
 
 --------
 
-## To lean ## 
+## To lean 
 
 - [ ] LaTeX 环境搭建
 - [ ] 分栏的使用和相关插件
@@ -17,7 +17,7 @@
 
 --------
 
-## License ##
+## License
 
 **["THE COFFEEWARE LICENSE" (Revision
 2)](https://github.com/Jmlevick/coffeeware-license):**
