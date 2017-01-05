@@ -1,4 +1,4 @@
-let g:tex_comment_nospell=1 " 不检查 tex 文档的注释区域拼写 
+let g:tex_flavor = 'latex'  " 将 .tex 后缀文件总是识别为 LaTeX 文件
 
 call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plugin List 列表
@@ -33,17 +33,18 @@ set formatoptions+=mM " 允许对multi_byte字符换行 (m), 并避免在行合�
 set textwidth=77      " 设置自动换行
 autocmd FileType html set textwidth=0
 
-syntax on          " 打开语法高亮
-filetype on        " 打开文件类型支持
-filetype plugin on " 打开文件类型插件支持
-filetype indent on " 打开文件类型缩进支持
-set number         " 显示行号
-set autoindent     " 自动缩进
-set modeline       " 底部的模式行
-set cursorline     " 高亮光标所在行
-set cursorcolumn   " 高亮光标所在列
-set showmatch      " 高亮括号配对
-set conceallevel=2 " 语法隐藏: eg. Markdown [text](url) show as text
+syntax on                 " 打开语法高亮
+filetype on               " 打开文件类型支持
+filetype plugin on        " 打开文件类型插件支持
+filetype indent on        " 打开文件类型缩进支持
+set number                " 显示行号
+set autoindent            " 自动缩进
+set modeline              " 底部的模式行
+set cursorline            " 高亮光标所在行
+set cursorcolumn          " 高亮光标所在列
+set showmatch             " 高亮括号配对
+set conceallevel=2        " 语法隐藏: eg. Markdown [text](url) show as text
+let g:tex_conceal='abdgs' " tex 的代码隐藏规则
 
 " 设置缩进宽度为 4 个空格
 set shiftwidth=4 
@@ -62,6 +63,7 @@ autocmd FileType c,cpp,css,h,java,js,nginx,scala,go,m,tex,bib,sty inoremap  <buf
 
 " 以下文件类型, 拼写检查
 autocmd FileType tex,md,markdown setlocal spell spelllang=en_us,cjk
+let g:tex_comment_nospell=1                     " 不检查 tex 文档的注释区域拼写 
 hi clear SpellBad
 hi SpellBad cterm=underline,bold ctermfg=red
 hi clear SpellRare
@@ -72,4 +74,5 @@ source ~/.vim/config/vim-markdown.vim
 source ~/.vim/config/python-mode.vim
 source ~/.vim/config/rainbow_parentheses.vim
 source ~/.vim/config/vim-instant-markdown.vim
+source ~/.vim/config/vimtex.vim
 " source ~/.vim/config/vim-latex.vim
