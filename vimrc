@@ -8,12 +8,12 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'kien/ctrlp.vim'
 " Plug 'Yggdroot/indentLine'
 " Plug 'Valloric/MatchTagAlways'
-" Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
 " Plug 'scrooloose/nerdtree',{ 'on':  'NERDTreeToggle' } " 文件列表, on-demand load
 " Plug 'Yggdroot/indentLine'  " 显示缩进标记线 
 " Plug 'scrooloose/syntastic' " 语法检查器，非常有用
 " Plug 'majutsushi/tagbar' " 类/函数/方法列表
 " Plug 'vim-latex/vim-latex'          " LaTeX 支持打包
+Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
 Plug 'lervag/vimtex'                " LaTeX 支持 
 Plug 'lilydjwg/fcitx.vim'           " fcitx-IME 支持
 Plug 'SirVer/ultisnips'             " snippets 支持插件
