@@ -6,6 +6,13 @@
 
 --------
 
+## System Requirement
+
+- texlive for LaTeX and vimtex
+- clang for YouCompleteMe
+
+--------
+
 ## To lean 
 
 - [*] LaTeX 环境搭建
