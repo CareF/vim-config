@@ -38,6 +38,7 @@ filetype on               " 打开文件类型支持
 filetype plugin on        " 打开文件类型插件支持
 filetype indent on        " 打开文件类型缩进支持
 set number                " 显示行号
+set so=5                  " 光标移动到倒数第5行时开始滚屏
 set autoindent            " 自动缩进
 set modeline              " 底部的模式行
 set cursorline            " 高亮光标所在行
@@ -58,6 +59,9 @@ set ignorecase    " 搜索时，忽略大小写
 " set nohlsearch  " 关闭搜索高亮
 " set incsearch   " incremental search 
 
+"在insert模式下能用删除键进行删除
+set backspace=indent,eol,start
+
 " 以下文件类型，敲 {<回车> 后，自动加入反括号 }
 autocmd FileType c,cpp,css,h,java,js,nginx,scala,go,m,tex,bib,sty inoremap  <buffer>  {<CR> {<CR>}<Esc>O
 
@@ -68,6 +72,31 @@ hi clear SpellBad
 hi SpellBad cterm=underline,bold ctermfg=red
 hi clear SpellRare
 hi SpellRare cterm=underline,bold
+
+" 自动添加文件头
+au BufNewFile *.py call ScriptHeader()
+au BufNewFile *.sh call ScriptHeader()
+
+function ScriptHeader()
+    if &filetype == 'python'
+        let header = "#!/usr/bin/env python"
+        let coding = "# -*- coding:utf-8 -*-"
+        let cfg = "# vim: ts=4 sw=4 sts=4 expandtab"
+    elseif &filetype == 'sh'
+        let header = "#!/bin/bash"
+    endif
+    let line = getline(1)
+    if line == header
+        return
+    endif
+    normal m'
+    call append(0,header)
+    if &filetype == 'python'
+        call append(1, coding)
+        call append(4, cfg)
+    endif
+    normal ''
+endfunction
 
 " 插件配置部分
 source ~/.vim/config/vim-markdown.vim
