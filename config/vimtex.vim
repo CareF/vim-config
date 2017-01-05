@@ -6,7 +6,7 @@ let g:vimtex_index_resize=1                   " 允许 index window 随 vim 自�
 let g:vimtex_index_split_pos='vert leftabove' " index window 的默认位置
 let g:vimtex_index_split_width=30             " index window 的默认大小
 let g:vimtex_complete_enabled=1               " cite 和 ref 补全
-" let g:vimtex_latexmk_options='-pdf -pdflatex="xelatex -synctex=1 %S %O" -verbose -file-line-error -interaction=nonstopmode'
+let g:vimtex_latexmk_options='-pdf -pdflatex="xelatex -synctex=1 \%S \%O" -verbose -file-line-error -interaction=nonstopmode'
 let g:vimtex_quickfix_ignored_warnings = [
     \ 'fontspec warning script-not-exist',  
   \]
