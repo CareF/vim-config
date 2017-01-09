@@ -21,7 +21,7 @@ Plug 'honza/vim-snippets'           " 一个 snippet 合集
 Plug 'godlygeek/tabular'            " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'      " Markdown 整理和语法高亮
 Plug 'suan/vim-instant-markdown'    " 自动编译显示 markdown
-Plug 'python-mode/python-mode'      " Python 语法检查, 运行, 文档等
+" Plug 'python-mode/python-mode'      " Python 语法检查, 运行, 文档等
 Plug 'kien/rainbow_parentheses.vim' " 使用不同颜色标记各级括号
 call plug#end()
 
@@ -57,12 +57,15 @@ set expandtab     " 按 tab 键时候自动输入空格
 
 set matchtime=0
 set ignorecase    " 搜索时，忽略大小写
-" set smartcase   " 搜索时，智能大小写
+set smartcase   " 搜索时，智能大小写
 " set nohlsearch  " 关闭搜索高亮
 " set incsearch   " incremental search 
 
 "在insert模式下能用删除键进行删除
 set backspace=indent,eol,start
+
+" 在 insert mode 快速拼写检查
+imap ^L <Esc>[slz=`]a
 
 " 以下文件类型，敲 {<回车> 后，自动加入反括号 }
 autocmd FileType c,cpp,css,h,java,js,nginx,scala,go,m,tex,bib,sty inoremap  <buffer>  {<CR> {<CR>}<Esc>O
@@ -78,6 +81,7 @@ hi SpellRare cterm=underline,bold
 " 自动添加文件头
 au BufNewFile *.py call ScriptHeader()
 au BufNewFile *.sh call ScriptHeader()
+au BufNewFile *.tex call ScriptHeader()
 
 function ScriptHeader()
     if &filetype == 'python'
@@ -86,6 +90,10 @@ function ScriptHeader()
         let cfg = "# vim: ts=4 sw=4 sts=4 expandtab"
     elseif &filetype == 'sh'
         let header = "#!/bin/bash"
+    elseif &filetype == 'tex'
+        let header = "%!TEX program = xelatex"
+        let rootpath = "%!TEX root = "
+        let options = "%!TEX option = "
     endif
     let line = getline(1)
     if line == header
@@ -95,17 +103,22 @@ function ScriptHeader()
     call append(0,header)
     if &filetype == 'python'
         call append(1, coding)
-        call append(4, cfg)
+        call append(3, cfg)
+    elseif &filetype == 'tex'
+        call append(1, rootpath)
+        call append(2, options)
     endif
     normal ''
 endfunction
 
+
 " 插件配置部分
 source ~/.vim/config/vim-markdown.vim
 source ~/.vim/config/python-mode.vim
-source ~/.vim/config/rainbow_parentheses.vim
 source ~/.vim/config/vim-instant-markdown.vim
 source ~/.vim/config/vimtex.vim
 source ~/.vim/config/youcompleteme.vim
 source ~/.vim/config/indentline.vim
+source ~/.vim/config/rainbow_parentheses.vim
+source ~/.vim/config/ultisnips.vim
 " source ~/.vim/config/vim-latex.vim
