@@ -1,0 +1,14 @@
+snippet head "Jekyll post header" b
+---
+layout: single
+title: "${1:title}"
+date:  `!v strftime("%Y-%m-%d %H:%M:%S")`
+categories:
+  - ${3}
+tags:
+  - ${4}
+comments: true
+---
+
+${0}
+endsnippet
