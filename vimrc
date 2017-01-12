@@ -40,7 +40,6 @@ filetype plugin on        " 打开文件类型插件支持
 filetype indent on        " 打开文件类型缩进支持
 set number                " 显示行号
 set scrolloff=5           " 光标移动到倒数第5行时开始滚屏
-set autoindent            " 自动缩进
 set cindent               " 对于 C 系列的缩进优化
 set modeline              " 底部的模式行
 set cursorline            " 高亮光标所在行
@@ -51,11 +50,12 @@ let g:tex_conceal='abdgs' " tex 的代码隐藏规则
 
 " 设置缩进宽度为 4 个空格
 set shiftwidth=4 
-autocmd FileType tex set shiftwidth=2
+" autocmd FileType tex set shiftwidth=2
 set tabstop=4
 set softtabstop=4
 set list lcs=tab:\¦\ 
 " 在 tab 键时标记位置
+set autoindent            " 自动缩进
 " set expandtab         " 按 tab 键时候自动输入空格
 
 set matchtime=0
@@ -77,6 +77,11 @@ imap ^L <Esc>[slz=`]a
 
 " 以下文件类型，敲 {<回车> 后，自动加入反括号 }
 autocmd FileType c,cpp,css,h,java,js,nginx,scala,go,m,tex,bib,sty inoremap  <buffer>  {<CR> {<CR>}<Esc>O
+
+" A syntax for placeholders
+" Pressing Control-j jumps to the next match.
+inoremap <c-n> <Esc>/<++><CR><Esc>cf>
+inoremap <c-p> <++>
 
 " 以下文件类型, 拼写检查
 autocmd FileType tex,md,markdown setlocal spell spelllang=en_us,cjk
