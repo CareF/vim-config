@@ -3,26 +3,26 @@ let g:tex_flavor = 'latex'  " 将 .tex 后缀文件总是识别为 LaTeX 文件
 call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plugin List 列表
 " Plug 'jrosiek/vim-mark'
-" Plug 'bling/vim-airline'
 " Plug 'rking/ag.vim'
 " Plug 'kien/ctrlp.vim'
 " Plug 'Valloric/MatchTagAlways'
 " Plug 'scrooloose/nerdtree',{ 'on':  'NERDTreeToggle' } " 文件列表, on-demand load
-" Plug 'Yggdroot/indentLine'  " 显示缩进标记线 
+" Plug 'python-mode/python-mode'      " Python 语法检查, 运行, 文档等
 " Plug 'scrooloose/syntastic' " 语法检查器，非常有用
 " Plug 'majutsushi/tagbar' " 类/函数/方法列表
-" Plug 'vim-latex/vim-latex'          " LaTeX 支持打包
+" Plug 'vim-latex/vim-latex'          " LaTeX 支持打包, 已放弃
 Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
-Plug 'Yggdroot/indentLine'          " 在缩进语言前加对齐竖线
-Plug 'lervag/vimtex'                " LaTeX 支持 
-Plug 'lilydjwg/fcitx.vim'           " fcitx-IME 支持
-Plug 'SirVer/ultisnips'             " snippets 支持插件
-Plug 'honza/vim-snippets'           " 一个 snippet 合集
-Plug 'godlygeek/tabular'            " Required by vim-markdown
-Plug 'plasticboy/vim-markdown'      " Markdown 整理和语法高亮
-Plug 'suan/vim-instant-markdown'    " 自动编译显示 markdown
-" Plug 'python-mode/python-mode'      " Python 语法检查, 运行, 文档等
-Plug 'kien/rainbow_parentheses.vim' " 使用不同颜色标记各级括号
+Plug 'vim-airline/vim-airline'        " 下方状态栏
+Plug 'vim-airline/vim-airline-themes' " airline 官方主题
+Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
+Plug 'lervag/vimtex'                  " LaTeX 支持
+Plug 'lilydjwg/fcitx.vim'             " fcitx-IME 支持
+Plug 'SirVer/ultisnips'               " snippets 支持插件
+Plug 'honza/vim-snippets'             " 一个 snippet 合集
+Plug 'godlygeek/tabular'              " Required by vim-markdown
+Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
+Plug 'suan/vim-instant-markdown'      " 自动编译显示 markdown
+Plug 'kien/rainbow_parentheses.vim'   " 使用不同颜色标记各级括号
 call plug#end()
 
 set directory=~/.vim/.swapfiles// " 写临时文件
@@ -54,13 +54,20 @@ set shiftwidth=4
 autocmd FileType tex set shiftwidth=2
 set tabstop=4
 set softtabstop=4
-set expandtab     " 按 tab 键时候自动输入空格
+set list lcs=tab:\¦\ 
+" 在 tab 键时标记位置
+" set expandtab         " 按 tab 键时候自动输入空格
 
 set matchtime=0
 set ignorecase    " 搜索时，忽略大小写
 set smartcase   " 搜索时，智能大小写
 " set nohlsearch  " 关闭搜索高亮
 " set incsearch   " incremental search 
+
+" 内部编码
+set fenc=utf-8
+set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
+set enc=utf-8
 
 "在insert模式下能用删除键进行删除
 set backspace=indent,eol,start
@@ -119,7 +126,9 @@ source ~/.vim/config/python-mode.vim
 source ~/.vim/config/vim-instant-markdown.vim
 source ~/.vim/config/vimtex.vim
 source ~/.vim/config/youcompleteme.vim
-source ~/.vim/config/indentline.vim
 source ~/.vim/config/rainbow_parentheses.vim
 source ~/.vim/config/ultisnips.vim
+source ~/.vim/config/indentline.vim
+source ~/.vim/config/vim-airline.vim
 " source ~/.vim/config/vim-latex.vim
+

@@ -1,2 +1,3 @@
-let g:indentLine_enabled = 0
-let g:indentLine_noConcealCursor=""
+let g:indentLine_enabled = 1
+let g:indentLine_char = "┆"
+let g:indentLine_fileType = ['c', 'cpp', 'python']
