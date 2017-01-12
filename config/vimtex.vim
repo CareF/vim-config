@@ -2,6 +2,9 @@ let g:vimtex_complete_img_use_tail=1          " 配合 \graphicspath, 补全图�
 let g:vim_fold_enabled=1                      " 允许折叠
 let g:vimtex_fold_preamble=1                  " 折叠tex文件头
 let g:vimtex_indent_enabled=1                 " 允许缩进
+let g:vimtex_indent_ignored_envs=[
+            \'document', 
+            \'frame']                         " 不缩进的环境
 let g:vimtex_imaps_leader='`'                 " insert mode mapping
 let g:vimtex_index_resize=1                   " 允许 index window 随 vim 自动改变大小
 let g:vimtex_index_split_pos='vert leftabove' " index window 的默认位置

@@ -29,7 +29,7 @@ set directory=~/.vim/.swapfiles// " 写临时文件
 set hidden            " buffer 后台
 set autochdir         " 打开文件时，自动 cd 到文件所在目录
 set ttimeoutlen=100   " 设置超时, 为了 vim-fcitx IME 支持不要导致太长的延迟
-set pastetoggle=<F9> " 粘贴模式, 暂时关闭自动缩进
+set pastetoggle=<F9>  " 粘贴模式, 暂时关闭自动缩进
 set formatoptions+=mM " 允许对multi_byte字符换行 (m), 并避免在行合并时补空格 (M)
 set textwidth=77      " 设置自动换行
 autocmd FileType html set textwidth=0
@@ -51,6 +51,7 @@ let g:tex_conceal='abdgs' " tex 的代码隐藏规则
 
 " 设置缩进宽度为 4 个空格
 set shiftwidth=4 
+autocmd FileType tex set shiftwidth=2
 set tabstop=4
 set softtabstop=4
 set expandtab     " 按 tab 键时候自动输入空格
