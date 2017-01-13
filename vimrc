@@ -7,21 +7,22 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'kien/ctrlp.vim'
 " Plug 'Valloric/MatchTagAlways'
 " Plug 'scrooloose/nerdtree',{ 'on':  'NERDTreeToggle' } " 文件列表, on-demand load
-" Plug 'python-mode/python-mode'	  " Python 语法检查, 运行, 文档等
-" Plug 'scrooloose/syntastic' " 语法检查器，非常有用
-" Plug 'majutsushi/tagbar' " 类/函数/方法列表
-" Plug 'vim-latex/vim-latex'		  " LaTeX 支持打包, 已放弃
-Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
-Plug 'vim-airline/vim-airline'		" 下方状态栏
+" Plug 'python-mode/python-mode'   " Python 语法检查, 运行, 文档等
+" Plug 'scrooloose/syntastic'      " 语法检查器，非常有用
+" Plug 'majutsushi/tagbar'         " 类/函数/方法列表
+" Plug 'vim-latex/vim-latex'       " LaTeX 支持打包, 已放弃
+Plug 'Valloric/YouCompleteMe', {
+			\'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
+" snippets 支持插件 | 一个 snippet 合集
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' 
+Plug 'vim-airline/vim-airline'        " 下方状态栏
 Plug 'vim-airline/vim-airline-themes' " airline 官方主题
-Plug 'Yggdroot/indentLine'			" 在缩进语言前加对齐竖线
-Plug 'lervag/vimtex'				  " LaTeX 支持
-Plug 'lilydjwg/fcitx.vim'			 " fcitx-IME 支持
-Plug 'SirVer/ultisnips'			   " snippets 支持插件
-Plug 'honza/vim-snippets'			 " 一个 snippet 合集
-Plug 'godlygeek/tabular'			  " Required by vim-markdown
-Plug 'plasticboy/vim-markdown'		" Markdown 整理和语法高亮
-Plug 'suan/vim-instant-markdown'	  " 自动编译显示 markdown
+Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
+Plug 'lervag/vimtex'                  " LaTeX 支持
+Plug 'lilydjwg/fcitx.vim'             " fcitx-IME 支持
+Plug 'godlygeek/tabular'              " Required by vim-markdown
+Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
+Plug 'suan/vim-instant-markdown'      " 自动编译显示 markdown
 Plug 'kien/rainbow_parentheses.vim'   " 使用不同颜色标记各级括号
 call plug#end()
 
@@ -63,9 +64,9 @@ let g:tex_conceal='abdgs' " tex 的代码隐藏规则
 set shiftwidth=4        " 设置缩进宽度为 4 个空格
 set tabstop=4
 set softtabstop=4
-set list lcs=tab:\¦\    " 在 tab 键时标记位置
 set autoindent          " 自动缩进
 set cindent             " 对于 C 系列的缩进优化
+autocmd FileType python set list lcs=tab:\¦\    " 在 tab 键时标记位置
 " set expandtab           " 按 tab 键时候自动输入空格
 
 set ignorecase  " 搜索时，忽略大小写
