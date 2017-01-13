@@ -8,9 +8,9 @@
 
 ## System Requirement
 
-- texlive for LaTeX and vimtex
-- clang for YouCompleteMe
-- powerline-fonts for vim-airline
+- `texlive` and `qpdfview` for LaTeX and vimtex
+- `clang` for YouCompleteMe
+- `powerline-fonts` for vim-airline
 
 --------
 
