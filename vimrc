@@ -96,7 +96,7 @@ function ScriptHeader()
 		let coding = "# -*- coding:utf-8 -*-"
 		let modeline = "# vim: ts=4 sw=4 sts=4 expandtab"
 		" ts for tabstop, sw for shiftwidth, sts for softtabstop
-	elseif &filetype == 'sh'<++>
+	elseif &filetype == 'sh'
 		let header = "#!/bin/bash"
 	elseif &filetype == 'tex'
 		let header = "%!TEX program = xelatex"
