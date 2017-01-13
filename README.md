@@ -10,6 +10,7 @@
 
 - texlive for LaTeX and vimtex
 - clang for YouCompleteMe
+- powerline-fonts for vim-airline
 
 --------
 
@@ -21,6 +22,8 @@
 - [X] 熟悉自动补全
 - [ ] snippet 编写和迁移 ([这里](http://mednoter.com/UltiSnips.html))
 - [X] YouCompleteMe 学习
+- [ ] vim-airline 功能学习
+- [ ] fcitx 包通信错误修理
 
 --------
 
