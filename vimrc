@@ -14,7 +14,7 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 Plug 'Valloric/YouCompleteMe', {
 			\'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
 " snippets 支持插件 | 一个 snippet 合集
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' 
+Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets' 
 Plug 'vim-airline/vim-airline'        " 下方状态栏
 Plug 'vim-airline/vim-airline-themes' " airline 官方主题
 Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
