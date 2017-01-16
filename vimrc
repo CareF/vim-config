@@ -3,6 +3,7 @@ let g:tex_flavor = 'latex'  " 将 .tex 后缀文件总是识别为 LaTeX 文件
 call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plugin List 列表
 " Plug 'jrosiek/vim-mark'
+" Plug 'jlanzarotta/bufexplorer'  
 " Plug 'rking/ag.vim'
 " Plug 'kien/ctrlp.vim'
 " Plug 'Valloric/MatchTagAlways'
@@ -129,6 +130,7 @@ function ScriptHeader()
 		let header = "%!TEX program = xelatex"
 		let rootpath = "%!TEX root = "
 		let options = "%!TEX option = "
+		let modeline = "% vim: ts=4 sw=2 sts=4 expandtab"
 	endif
 	let line = getline(1)
 	if line == header
@@ -142,6 +144,7 @@ function ScriptHeader()
 	elseif &filetype == 'tex'
 		call append(1, rootpath)
 		call append(2, options)
+		call append(4, modeline)
 	endif
 	normal ''
 endfunction
