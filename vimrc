@@ -85,6 +85,13 @@ hi SpellBad cterm=underline,bold ctermfg=red
 hi clear SpellRare
 hi SpellRare cterm=underline,bold
 
+if has("autocmd")   " 打开时光标放在上次退出时的位置
+	autocmd BufReadPost *
+				\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+				\	exe "normal g'\"" |
+				\ endif
+endif
+
 " 自动添加文件头
 au BufNewFile *.py call ScriptHeader()
 au BufNewFile *.sh call ScriptHeader()
