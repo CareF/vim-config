@@ -36,6 +36,9 @@ set background=dark       " Or light
 if has("gui_running")
 	set guioptions-=T   " 隐藏工具栏
 	set guioptions-=m   " 隐藏菜单栏
+	" set guifontwide=STHeiti " 双宽(eg 汉字) 字体
+	" set guiheadroom=0   " 去掉底部保留空间
+	set mouse-=a        " 禁用鼠标
 	" 类似终端的复制粘贴
 	inoremap <c-V> <Esc>"+pi
 	vnoremap <c-C> "+y
@@ -56,11 +59,12 @@ set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set enc=utf-8
 
 set textwidth=77      " 设置自动换行
-set formatoptions+=mM " 允许对multi_byte字符换行 (m), 并避免在行合并时补空格 (M)
+set formatoptions+=mM " 允许对多字节字符换行(m), 并避免在行合并时补空格(M)
 autocmd FileType html set textwidth=0
 
 set pastetoggle=<F9>           " 粘贴模式, 暂时关闭自动缩进
 set backspace=indent,eol,start " 在insert模式下能用删除键进行删除到上一行
+set whichwrap=b,s,<,>,[,]      " 移动光标时运行跨行
 " 以下文件类型，敲 {<回车> 后，自动加入反括号 }
 autocmd FileType c,cpp,css,h,java,js,nginx,scala,go,m,tex,bib,sty inoremap  <buffer>  {<CR> {<CR>}<Esc>O
 " 实现 vim-latex 风格 placeholder
@@ -87,7 +91,7 @@ autocmd FileType python set list lcs=tab:\¦\    " 在 tab 键时标记位置
 set ignorecase  " 搜索时，忽略大小写
 set smartcase   " 搜索时，智能大小写
 " set nohlsearch  " 关闭搜索高亮
-" set incsearch   " incremental search 
+set incsearch   " incremental search 
 
 " 以下文件类型, 拼写检查
 autocmd FileType tex,md,markdown setlocal spell spelllang=en_us,cjk
@@ -154,3 +158,6 @@ source ~/.vim/config/ultisnips.vim
 source ~/.vim/config/indentline.vim
 source ~/.vim/config/vim-airline.vim
 source ~/.vim/config/fcitx.vim
+if filereadable(expand("~/.vim/config/local.vim"))
+	source ~/.vim/config/local.vim
+endif
