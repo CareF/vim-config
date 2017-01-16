@@ -24,7 +24,22 @@ Plug 'godlygeek/tabular'              " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
 Plug 'suan/vim-instant-markdown'      " 自动编译显示 markdown
 Plug 'kien/rainbow_parentheses.vim'   " 使用不同颜色标记各级括号
+Plug 'morhetz/gruvbox'                " 主题
+" Plug 'tomasr/molokai'                 " 主题
 call plug#end()
+
+" UI
+colorscheme gruvbox
+set background=dark       " Or light
+" colorscheme molokai
+" autocmd VimEnter * hi Normal ctermbg=NONE
+if has("gui_running")
+	set guioptions-=T   " 隐藏工具栏
+	set guioptions-=m   " 隐藏菜单栏
+	" 类似终端的复制粘贴
+	inoremap <c-V> <Esc>"+pi
+	vnoremap <c-C> "+y
+endif
 
 syntax on                 " 打开语法高亮
 filetype on               " 打开文件类型支持
