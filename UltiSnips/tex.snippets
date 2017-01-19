@@ -1,3 +1,18 @@
 snippet Eq "Equation ref"
-Eq.~\\ref
+Eq.~(\\ref
+endsnippet
+
+snippet mini "Minipages" b
+\begin{minipage}[b]{${1:0.5\linewidth}}
+  ${3:${VISUAL}}
+\end{minipage}%
+\begin{minipage}[b]{${2:0.5\linewidth}}
+  ${0}
+\end{minipage}
+endsnippet
+
+snippet align "AMS align math" b
+\begin{align}
+$0
+\end{align}
 endsnippet
