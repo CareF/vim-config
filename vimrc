@@ -50,7 +50,7 @@ filetype on               " 打开文件类型支持
 filetype plugin on        " 打开文件类型插件支持
 filetype indent on        " 打开文件类型缩进支持
 
-set hidden                        " buffer 后台
+" set hidden                        " 允许未保存的 buffer 后台
 set directory=~/.vim/.swapfiles// " 写临时文件
 set autochdir                     " 打开文件时，自动 cd 到文件所在目录
 
@@ -70,7 +70,7 @@ set whichwrap=b,s,<,>,[,]      " 移动光标时运行跨行
 autocmd FileType c,cpp,css,h,java,js,nginx,scala,go,m,tex,bib,sty inoremap  <buffer>  {<CR> {<CR>}<Esc>O
 " 实现 vim-latex 风格 placeholder
 inoremap <c-n> <Esc>/<++><CR><Esc>cf>
-inoremap <c-p> <++>
+inoremap <c-p> <++><Esc>
 
 set number                " 显示行号
 set scrolloff=5           " 光标移动到倒数第5行时开始滚屏
@@ -100,10 +100,10 @@ let g:tex_comment_nospell=1      " 不检查 tex 文档的注释区域拼写
 " 在 insert mode 快速拼写检查
 imap ^L <Esc>[slz=`]a
 " 拼写错误标识样式
-hi clear SpellBad
-hi SpellBad cterm=underline,bold ctermfg=red
-hi clear SpellRare
-hi SpellRare cterm=underline,bold
+" hi clear SpellBad
+" hi SpellBad cterm=underline,bold ctermfg=red
+" hi clear SpellRare
+" hi SpellRare cterm=underline,bold
 
 if has("autocmd")   " 打开时光标放在上次退出时的位置
 	autocmd BufReadPost *
