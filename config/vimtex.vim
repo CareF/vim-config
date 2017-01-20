@@ -14,6 +14,7 @@ let g:vimtex_complete_recursive_bib=1         " 递归查找 cite
 let g:vimtex_latexmk_options='-pdf -pdflatex="xelatex -synctex=1 \%S \%O" -verbose -file-line-error -interaction=nonstopmode'
 let g:vimtex_quickfix_ignored_warnings = [
     \ 'fontspec warning script-not-exist',  
+	\ 'LaTeX Font Warning',
   \]
 let g:vimtex_quickfix_open_on_warning=0       " 只有 warning 时候不打开 quickfix
 let g:vimtex_view_method='general'            " 使用下方的设置

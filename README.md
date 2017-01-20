@@ -14,16 +14,17 @@
 
 --------
 
-## To lean 
+## To learn 
 
 - [x] LaTeX 环境搭建
 - [ ] 分栏的使用和相关插件
-- [ ] 添加时间戳并且在 YAML 自动更新 
+- [X] 添加时间戳并且在 YAML 自动更新 
 - [X] 熟悉自动补全
 - [ ] snippet 编写和迁移 ([这里](http://mednoter.com/UltiSnips.html))
 - [X] YouCompleteMe 学习
 - [ ] vim-airline 功能学习
 - [ ] fcitx 包通信错误修理
+- [ ] 自动读取 tex 文件头选用 program
 
 --------
 
