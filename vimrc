@@ -37,6 +37,7 @@ set background=dark       " Or light
 if has("gui_running")
 	set guioptions-=T   " 隐藏工具栏
 	set guioptions-=m   " 隐藏菜单栏
+	set guifont=Monospace\ 12
 	" set guifontwide=STHeiti " 双宽(eg 汉字) 字体
 	" set guiheadroom=0   " 去掉底部保留空间
 	set mouse-=a        " 禁用鼠标
