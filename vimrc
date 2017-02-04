@@ -61,7 +61,7 @@ set enc=utf-8
 
 set textwidth=77      " 设置自动换行
 set formatoptions+=mM " 允许对多字节字符换行(m), 并避免在行合并时补空格(M)
-autocmd FileType html set textwidth=0
+autocmd FileType html,conf set textwidth=0
 
 set pastetoggle=<F9>           " 粘贴模式, 暂时关闭自动缩进
 set backspace=indent,eol,start " 在insert模式下能用删除键进行删除到上一行
