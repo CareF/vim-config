@@ -11,6 +11,7 @@
 - `texlive` and `qpdfview` for LaTeX and vimtex
 - `clang` for YouCompleteMe
 - `powerline-fonts` for vim-airline
+- `.swapfiles` path needed manually
 
 --------
 
