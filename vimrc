@@ -26,6 +26,7 @@ Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
 Plug 'suan/vim-instant-markdown'      " 自动编译显示 markdown
 Plug 'kien/rainbow_parentheses.vim'   " 使用不同颜色标记各级括号
 Plug 'morhetz/gruvbox'                " 主题
+Plug 'tpope/vim-fugitive'                   " Git wrapper
 " Plug 'tomasr/molokai'                 " 主题
 call plug#end()
 
@@ -63,6 +64,7 @@ set enc=utf-8
 set textwidth=77      " 设置自动换行
 set formatoptions+=mM " 允许对多字节字符换行(m), 并避免在行合并时补空格(M)
 autocmd FileType html,conf set textwidth=0
+autocmd FileType markdown,md set formatoptions-=m
 
 set pastetoggle=<F9>           " 粘贴模式, 暂时关闭自动缩进
 set backspace=indent,eol,start " 在insert模式下能用删除键进行删除到上一行
