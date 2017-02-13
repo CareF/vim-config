@@ -165,6 +165,7 @@ source ~/.vim/config/ultisnips.vim
 source ~/.vim/config/indentline.vim
 source ~/.vim/config/vim-airline.vim
 source ~/.vim/config/fcitx.vim
+source ~/.vim/config/nerdcommenter.vim
 if filereadable(expand("~/.vim/config/local.vim"))
 	source ~/.vim/config/local.vim
 endif
