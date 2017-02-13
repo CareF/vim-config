@@ -53,7 +53,7 @@ filetype on               " 打开文件类型支持
 filetype plugin on        " 打开文件类型插件支持
 filetype indent on        " 打开文件类型缩进支持
 
-" set hidden                        " 允许未保存的 buffer 后台
+set hidden                        " 允许未保存的 buffer 后台
 set directory=~/.vim/.swapfiles// " 写临时文件
 set autochdir                     " 打开文件时，自动 cd 到文件所在目录
 
