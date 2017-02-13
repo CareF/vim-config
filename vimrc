@@ -25,8 +25,9 @@ Plug 'godlygeek/tabular'              " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
 Plug 'suan/vim-instant-markdown'      " 自动编译显示 markdown
 Plug 'kien/rainbow_parentheses.vim'   " 使用不同颜色标记各级括号
+Plug 'scrooloose/nerdcommenter'       " 添加注释助手
+Plug 'tpope/vim-fugitive'             " Git wrapper
 Plug 'morhetz/gruvbox'                " 主题
-Plug 'tpope/vim-fugitive'                   " Git wrapper
 " Plug 'tomasr/molokai'                 " 主题
 call plug#end()
 
