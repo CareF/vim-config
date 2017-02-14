@@ -7,7 +7,6 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'rking/ag.vim'
 " Plug 'kien/ctrlp.vim'
 " Plug 'Valloric/MatchTagAlways'
-" Plug 'scrooloose/nerdtree',{ 'on':  'NERDTreeToggle' } " 文件列表, on-demand load
 " Plug 'python-mode/python-mode'   " Python 语法检查, 运行, 文档等
 " Plug 'scrooloose/syntastic'      " 语法检查器，非常有用
 " Plug 'majutsushi/tagbar'         " 类/函数/方法列表
@@ -15,6 +14,9 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 Plug 'Valloric/YouCompleteMe', {
 			\'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
 " snippets 支持插件 | 一个 snippet 合集
+Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-git-plugin'
+" 文件列表, on-demand load
+Plug 'scrooloose/nerdcommenter'       " 添加注释助手
 Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets' 
 Plug 'vim-airline/vim-airline'        " 下方状态栏
 Plug 'vim-airline/vim-airline-themes' " airline 官方主题
@@ -25,7 +27,6 @@ Plug 'godlygeek/tabular'              " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
 Plug 'suan/vim-instant-markdown'      " 自动编译显示 markdown
 Plug 'kien/rainbow_parentheses.vim'   " 使用不同颜色标记各级括号
-Plug 'scrooloose/nerdcommenter'       " 添加注释助手
 Plug 'tpope/vim-fugitive'             " Git wrapper
 Plug 'morhetz/gruvbox'                " 主题
 " Plug 'tomasr/molokai'                 " 主题
@@ -54,6 +55,7 @@ filetype plugin on        " 打开文件类型插件支持
 filetype indent on        " 打开文件类型缩进支持
 
 set hidden                        " 允许未保存的 buffer 后台
+set switchbuf=usetab,newtab       " 通过 quickfix 等行为切换 buffer 时的行为
 set directory=~/.vim/.swapfiles// " 写临时文件
 set autochdir                     " 打开文件时，自动 cd 到文件所在目录
 
@@ -165,6 +167,7 @@ source ~/.vim/config/ultisnips.vim
 source ~/.vim/config/indentline.vim
 source ~/.vim/config/vim-airline.vim
 source ~/.vim/config/fcitx.vim
+source ~/.vim/config/nerdtree.vim
 source ~/.vim/config/nerdcommenter.vim
 if filereadable(expand("~/.vim/config/local.vim"))
 	source ~/.vim/config/local.vim
