@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-gi
 " 文件列表, on-demand load
 Plug 'scrooloose/nerdcommenter'       " 添加注释助手
 Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets' 
+Plug 'ervandew/supertab'              " YCM 和 snippets 辅助
 Plug 'vim-airline/vim-airline'        " 下方状态栏
 Plug 'vim-airline/vim-airline-themes' " airline 官方主题
 Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
@@ -169,6 +170,7 @@ source ~/.vim/config/vim-airline.vim
 source ~/.vim/config/fcitx.vim
 source ~/.vim/config/nerdtree.vim
 source ~/.vim/config/nerdcommenter.vim
+source ~/.vim/config/supertab.vim
 if filereadable(expand("~/.vim/config/local.vim"))
 	source ~/.vim/config/local.vim
 endif
