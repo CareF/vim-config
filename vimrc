@@ -12,7 +12,7 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'majutsushi/tagbar'         " 类/函数/方法列表
 " Plug 'vim-latex/vim-latex'       " LaTeX 支持打包, 已放弃
 Plug 'Valloric/YouCompleteMe', {
-			\'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
+			\'do': 'CXX=clang++ CC=clang python install.py --clang-completer --system-libclang'}
 " snippets 支持插件 | 一个 snippet 合集
 Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-git-plugin'
 " 文件列表, on-demand load
