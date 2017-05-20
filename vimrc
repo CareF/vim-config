@@ -22,7 +22,7 @@ Plug 'ervandew/supertab'              " YCM 和 snippets 辅助
 Plug 'vim-airline/vim-airline'        " 下方状态栏
 Plug 'vim-airline/vim-airline-themes' " airline 官方主题
 Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
-Plug 'lervag/vimtex'                  " LaTeX 支持
+" Plug 'lervag/vimtex'                  " LaTeX 支持
 Plug 'lilydjwg/fcitx.vim'             " fcitx-IME 支持
 Plug 'godlygeek/tabular'              " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
