@@ -66,7 +66,9 @@ set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set enc=utf-8
 
 " set textwidth=79      " 设置自动换行, 过分推广换行不好用..
-autocmd FileType c,cpp,css,h,java,m,tex,bib,sty,py,txt,md,markdown set textwidth=77      " 设置自动换行
+autocmd FileType c,cpp,css,h,java,m,tex,bib,sty,py,txt,md,markdown set textwidth=80
+autocmd FileType c,cpp,css,h,java,m,tex,bib,sty,py,txt,md,markdown set colorcolumn=80
+" 设置自动换行, 并在换行处显示
 set formatoptions+=mM " 允许对多字节字符换行(m), 并避免在行合并时补空格(M)
 " autocmd FileType html,conf,fstab set textwidth=0
 autocmd FileType markdown,md set formatoptions-=m
@@ -106,7 +108,7 @@ set incsearch   " incremental search
 autocmd FileType tex,md,markdown setlocal spell spelllang=en_us,cjk
 let g:tex_comment_nospell=1      " 不检查 tex 文档的注释区域拼写 
 " 在 insert mode 快速拼写检查
-imap ^L <Esc>[slz=`]a
+imap <F2> <Esc>[slz=`]a
 " 拼写错误标识样式
 " hi clear SpellBad
 " hi SpellBad cterm=underline,bold ctermfg=red
