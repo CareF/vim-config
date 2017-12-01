@@ -16,8 +16,9 @@ Plug 'w0rp/ale'                       " 语法检查器
 Plug 'xolox/vim-misc'                 " Required by vim-easytags
 Plug 'xolox/vim-easytags'             " Tag 自动生成和高亮
 Plug 'majutsushi/tagbar'              " 类/函数/方法列表
-Plug 'scrooloose/nerdcommenter'       " 添加注释助手
+Plug 'scrooloose/nerdcommenter'       " 添加注释助手 <Leader>cc/c<Space>...
 Plug 'tpope/vim-surround'             " 添加和修改环绕 (如括号, 引号和 XML tag)
+Plug 'terryma/vim-multiple-cursors'   " 类 Sublime Text 多光标
 Plug 'qpkorr/vim-bufkill'             " 关闭 buffer 而不关闭窗口分区
 Plug 'jlanzarotta/bufexplorer'        " Buffer 切换辅助 <Leader>be
 Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
