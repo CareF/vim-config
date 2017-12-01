@@ -2,9 +2,8 @@ let g:tex_flavor = 'latex'  " 将 .tex 后缀文件总是识别为 LaTeX 文件
 
 call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plugin List 列表
+" Plug 'rking/ag.vim'              " front end for the silver_searcher
 " Plug 'kien/ctrlp.vim'            " Sublime Text Ctrl-P 
-" Plug 'Valloric/MatchTagAlways'
-Plug 'scrooloose/syntastic'      " 语法检查器，非常有用
 Plug 'Valloric/YouCompleteMe', {
 			\'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast python install.py --clang-completer --system-libclang'}
 			" \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast LLVM_OPTS=\"$LLVM_OPTS --disable-terminfo\" python install.py --clang-completer'}
@@ -13,10 +12,12 @@ Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets'
 Plug 'ervandew/supertab'              " YCM 和 snippets 辅助
 Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-git-plugin'
 " 文件列表, on-demand load
-Plug 'majutsushi/tagbar'              " 类/函数/方法列表
+Plug 'w0rp/ale'                       " 语法检查器
 Plug 'xolox/vim-misc'                 " Required by vim-easytags
 Plug 'xolox/vim-easytags'             " Tag 自动生成和高亮
+Plug 'majutsushi/tagbar'              " 类/函数/方法列表
 Plug 'scrooloose/nerdcommenter'       " 添加注释助手
+Plug 'tpope/vim-surround'             " 添加和修改环绕 (如括号, 引号和 XML tag)
 Plug 'qpkorr/vim-bufkill'             " 关闭 buffer 而不关闭窗口分区
 Plug 'jlanzarotta/bufexplorer'        " Buffer 切换辅助 <Leader>be
 Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
@@ -35,15 +36,11 @@ Plug 'morhetz/gruvbox'                " 主题
 " Plug 'tomasr/molokai'                 " 主题
 call plug#end()
 
-" UI
-" colorscheme molokai
 if has("gui_running")
+	" UI
 	colorscheme gruvbox
+	" colorscheme molokai
 	set background=dark       " Or light
-endif
-" colorscheme molokai
-" autocmd VimEnter * hi Normal ctermbg=NONE
-if has("gui_running")
 	set guioptions-=T   " 隐藏工具栏
 	set guioptions-=m   " 隐藏菜单栏
 	set guifont=Monospace\ 12
@@ -60,7 +57,7 @@ filetype on               " 打开文件类型支持
 filetype plugin on        " 打开文件类型插件支持
 filetype indent on        " 打开文件类型缩进支持
 
-set hidden                        " 允许未保存的 buffer 后台
+" set hidden                        " 允许未保存的 buffer 后台
 set switchbuf=usetab,newtab       " 通过 quickfix 等行为切换 buffer 时的行为
 set directory=~/.vim/.swapfiles// " 写临时文件
 set autochdir                     " 打开文件时，自动 cd 到文件所在目录
@@ -85,12 +82,9 @@ set backspace=indent,eol,start " 在insert模式下能用删除键进行删除�
 set whichwrap=b,s,<,>,[,]      " 移动光标时运行跨行
 " 以下文件类型，敲 {<回车> 后，自动加入反括号 }
 autocmd FileType c,cpp,css,h,java,js,nginx,scala,go,m,tex,bib,sty inoremap  <buffer>  {<CR> {<CR>}<Esc>O
-" 实现 vim-latex 风格 placeholder
-inoremap <c-n> <Esc>/<++><CR><Esc>cf>
-inoremap <c-p> <++><Esc>
 
 set number                " 显示行号
-set scrolloff=5           " 光标移动到倒数第5行时开始滚屏
+set scrolloff=4           " 光标移动到倒数第5行时开始滚屏
 set cursorline            " 高亮光标所在行
 set cursorcolumn          " 高亮光标所在列
 set hlsearch              " 高亮检索内容
@@ -193,7 +187,7 @@ endfunction
 
 " 插件配置部分
 source ~/.vim/config/vim-markdown.vim
-source ~/.vim/config/python-mode.vim
+" source ~/.vim/config/python-mode.vim
 source ~/.vim/config/vim-instant-markdown.vim
 source ~/.vim/config/vimtex.vim
 source ~/.vim/config/youcompleteme.vim
@@ -208,7 +202,8 @@ source ~/.vim/config/supertab.vim
 source ~/.vim/config/tagbar.vim
 source ~/.vim/config/bufexplorer.vim
 source ~/.vim/config/easytags.vim
-source ~/.vim/config/syntastic.vim
+" source ~/.vim/config/syntastic.vim
+source ~/.vim/config/ale.vim
 if filereadable(expand("~/.vim/config/local.vim"))
 	source ~/.vim/config/local.vim
 endif
