@@ -132,6 +132,7 @@ au BufNewFile *.tex call ScriptHeader()
 
 set modeline " 文件底部的模式行
 function ScriptHeader()
+	" Credit to bigeagle
 	if &filetype == 'python'
 		let header = "#!/usr/bin/env python"
 		let coding = "# -*- coding:utf-8 -*-"
