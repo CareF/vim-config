@@ -2,43 +2,46 @@ let g:tex_flavor = 'latex'  " 将 .tex 后缀文件总是识别为 LaTeX 文件
 
 call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plugin List 列表
-" Plug 'jrosiek/vim-mark'
-" Plug 'jlanzarotta/bufexplorer'  
-" Plug 'rking/ag.vim'
-" Plug 'kien/ctrlp.vim'
-" Plug 'Valloric/MatchTagAlways'
-" Plug 'python-mode/python-mode'   " Python 语法检查, 运行, 文档等
-" Plug 'scrooloose/syntastic'      " 语法检查器，非常有用
-" Plug 'majutsushi/tagbar'         " 类/函数/方法列表
-" Plug 'vim-latex/vim-latex'       " LaTeX 支持打包, 已放弃
+" Plug 'rking/ag.vim'              " front end for the silver_searcher
+" Plug 'kien/ctrlp.vim'            " Sublime Text Ctrl-P 
 Plug 'Valloric/YouCompleteMe', {
-			\'do': 'CXX=clang++ CC=clang python install.py --clang-completer --system-libclang'}
+			\'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast python install.py --clang-completer --system-libclang'}
+			" \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast LLVM_OPTS=\"$LLVM_OPTS --disable-terminfo\" python install.py --clang-completer'}
 " snippets 支持插件 | 一个 snippet 合集
-Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-git-plugin'
-" 文件列表, on-demand load
-Plug 'scrooloose/nerdcommenter'       " 添加注释助手
 Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets' 
 Plug 'ervandew/supertab'              " YCM 和 snippets 辅助
-Plug 'vim-airline/vim-airline'        " 下方状态栏
-Plug 'vim-airline/vim-airline-themes' " airline 官方主题
+Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-git-plugin'
+" 文件列表, on-demand load
+Plug 'w0rp/ale'                       " 语法检查器
+Plug 'xolox/vim-misc'                 " Required by vim-easytags
+Plug 'xolox/vim-easytags'             " Tag 自动生成和高亮
+Plug 'majutsushi/tagbar'              " 类/函数/方法列表
+Plug 'scrooloose/nerdcommenter'       " 添加注释助手 <Leader>cc/c<Space>...
+Plug 'tpope/vim-surround'             " 添加和修改环绕 (如括号, 引号和 XML tag)
+Plug 'terryma/vim-multiple-cursors'   " 类 Sublime Text 多光标
+Plug 'qpkorr/vim-bufkill'             " 关闭 buffer 而不关闭窗口分区
+Plug 'jlanzarotta/bufexplorer'        " Buffer 切换辅助 <Leader>be
 Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
-" Plug 'lervag/vimtex'                  " LaTeX 支持
+Plug 'Vimjas/vim-python-pep8-indent'  " PEP8 风格 Python 缩进
+Plug 'jrosiek/vim-mark'               " 同时显示多个高亮关键词 <Leader>m
 Plug 'lilydjwg/fcitx.vim'             " fcitx-IME 支持
+" Plug 'lervag/vimtex'                  " LaTeX 支持
 Plug 'godlygeek/tabular'              " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
 Plug 'suan/vim-instant-markdown'      " 自动编译显示 markdown
+" Plug 'tpope/vim-fugitive'             " Git wrapper
+Plug 'vim-airline/vim-airline'        " 下方状态栏
+Plug 'vim-airline/vim-airline-themes' " airline 官方主题
 Plug 'kien/rainbow_parentheses.vim'   " 使用不同颜色标记各级括号
-Plug 'tpope/vim-fugitive'             " Git wrapper
 Plug 'morhetz/gruvbox'                " 主题
 " Plug 'tomasr/molokai'                 " 主题
 call plug#end()
 
-" UI
-colorscheme gruvbox
-set background=dark       " Or light
-" colorscheme molokai
-" autocmd VimEnter * hi Normal ctermbg=NONE
 if has("gui_running")
+	" UI
+	colorscheme gruvbox
+	" colorscheme molokai
+	set background=dark       " Or light
 	set guioptions-=T   " 隐藏工具栏
 	set guioptions-=m   " 隐藏菜单栏
 	set guifont=Monospace\ 12
@@ -55,10 +58,12 @@ filetype on               " 打开文件类型支持
 filetype plugin on        " 打开文件类型插件支持
 filetype indent on        " 打开文件类型缩进支持
 
-set hidden                        " 允许未保存的 buffer 后台
+" set hidden                        " 允许未保存的 buffer 后台
 set switchbuf=usetab,newtab       " 通过 quickfix 等行为切换 buffer 时的行为
 set directory=~/.vim/.swapfiles// " 写临时文件
 set autochdir                     " 打开文件时，自动 cd 到文件所在目录
+set sessionoptions-=curdir        " Session 文件中应使用相对路径
+set sessionoptions+=sesdir
 
 " 内部编码
 set fenc=utf-8
@@ -66,8 +71,8 @@ set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set enc=utf-8
 
 " set textwidth=79      " 设置自动换行, 过分推广换行不好用..
-autocmd FileType c,cpp,css,h,java,m,tex,bib,sty,py,txt,md,markdown set textwidth=80
-autocmd FileType c,cpp,css,h,java,m,tex,bib,sty,py,txt,md,markdown set colorcolumn=80
+autocmd FileType c,cpp,css,h,java,m,tex,sty,python set textwidth=77
+autocmd FileType c,cpp,css,h,java,m,tex,sty,python set colorcolumn=78
 " 设置自动换行, 并在换行处显示
 set formatoptions+=mM " 允许对多字节字符换行(m), 并避免在行合并时补空格(M)
 " autocmd FileType html,conf,fstab set textwidth=0
@@ -78,14 +83,12 @@ set backspace=indent,eol,start " 在insert模式下能用删除键进行删除�
 set whichwrap=b,s,<,>,[,]      " 移动光标时运行跨行
 " 以下文件类型，敲 {<回车> 后，自动加入反括号 }
 autocmd FileType c,cpp,css,h,java,js,nginx,scala,go,m,tex,bib,sty inoremap  <buffer>  {<CR> {<CR>}<Esc>O
-" 实现 vim-latex 风格 placeholder
-inoremap <c-n> <Esc>/<++><CR><Esc>cf>
-inoremap <c-p> <++><Esc>
 
 set number                " 显示行号
-set scrolloff=5           " 光标移动到倒数第5行时开始滚屏
+set scrolloff=4           " 光标移动到倒数第5行时开始滚屏
 set cursorline            " 高亮光标所在行
 set cursorcolumn          " 高亮光标所在列
+set hlsearch              " 高亮检索内容
 set showmatch             " 输入成对括号时跳转匹配括号
 set matchtime=1           " 跳转时间, 单位 0.1s
 set conceallevel=0        " 语法隐藏: eg. Markdown [text](url) show as text
@@ -129,6 +132,7 @@ au BufNewFile *.tex call ScriptHeader()
 
 set modeline " 文件底部的模式行
 function ScriptHeader()
+	" Credit to bigeagle
 	if &filetype == 'python'
 		let header = "#!/usr/bin/env python"
 		let coding = "# -*- coding:utf-8 -*-"
@@ -159,10 +163,33 @@ function ScriptHeader()
 	normal ''
 endfunction
 
+" 高亮光标下的单词
+" Highlight all instances of word under cursor, when idle.
+" Useful when studying strange source code.
+" Type z/ to toggle highlighting on/off.
+nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+function! AutoHighlightToggle()
+  let @/ = ''
+  if exists('#auto_highlight')
+    au! auto_highlight
+    augroup! auto_highlight
+    setl updatetime=4000
+    echo 'Highlight current word: off'
+    return 0
+  else
+    augroup auto_highlight
+      au!
+      au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+    augroup end
+    setl updatetime=500
+    echo 'Highlight current word: ON'
+    return 1
+  endif
+endfunction
 
 " 插件配置部分
 source ~/.vim/config/vim-markdown.vim
-source ~/.vim/config/python-mode.vim
+" source ~/.vim/config/python-mode.vim
 source ~/.vim/config/vim-instant-markdown.vim
 source ~/.vim/config/vimtex.vim
 source ~/.vim/config/youcompleteme.vim
@@ -174,6 +201,11 @@ source ~/.vim/config/fcitx.vim
 source ~/.vim/config/nerdtree.vim
 source ~/.vim/config/nerdcommenter.vim
 source ~/.vim/config/supertab.vim
+source ~/.vim/config/tagbar.vim
+source ~/.vim/config/bufexplorer.vim
+source ~/.vim/config/easytags.vim
+" source ~/.vim/config/syntastic.vim
+source ~/.vim/config/ale.vim
 if filereadable(expand("~/.vim/config/local.vim"))
 	source ~/.vim/config/local.vim
 endif
