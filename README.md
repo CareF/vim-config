@@ -13,6 +13,7 @@
 - `powerline-fonts` for vim-airline
 - `.swapfiles` path needed manually
 - `(python-)flake8` and `python2-flake8` for python checker in syntastic
+- `exuberant-ctags` or `ctags` required for easytags
 
 --------
 
