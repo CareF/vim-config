@@ -1,5 +1,6 @@
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
+let g:ale_lint_delay = 2000
 let g:ale_python_flake8_options = '--ignore=E402'
 let g:airline#extensions#ale#enabled = 1
 let airline#extensions#ale#error_symbol = '✗'
