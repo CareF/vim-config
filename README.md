@@ -9,7 +9,7 @@
 ## System Requirement
 
 - `texlive` and `qpdfview` for LaTeX and vimtex
-- `clang` for YouCompleteMe
+- `clang` `cmake` for YouCompleteMe
 - `powerline-fonts` for vim-airline
 - `.swapfiles` path needed manually
 - `(python-)flake8` and `python2-flake8` for python checker in syntastic
