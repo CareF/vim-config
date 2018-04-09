@@ -51,6 +51,8 @@ if has("gui_running")
 	" 类似终端的复制粘贴
 	inoremap <c-V> <Esc>"+pi
 	vnoremap <c-C> "+y
+else
+	set background=dark       " Or light
 endif
 
 syntax on                 " 打开语法高亮
