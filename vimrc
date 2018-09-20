@@ -4,12 +4,12 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plugin List 列表
 " Plug 'rking/ag.vim'              " front end for the silver_searcher
 " Plug 'kien/ctrlp.vim'            " Sublime Text Ctrl-P 
-Plug 'Valloric/YouCompleteMe', {
-			\'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast python install.py --clang-completer --system-libclang'}
+" Plug 'Valloric/YouCompleteMe', {
+"             \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast python install.py --clang-completer --system-libclang'}
 			" \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast LLVM_OPTS=\"$LLVM_OPTS --disable-terminfo\" python install.py --clang-completer'}
 " snippets 支持插件 | 一个 snippet 合集
-Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets' 
-Plug 'ervandew/supertab'              " YCM 和 snippets 辅助
+" Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets' 
+" Plug 'ervandew/supertab'              " YCM 和 snippets 辅助
 Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-git-plugin'
 " 文件列表, on-demand load
 " Plug 'w0rp/ale'                       " 语法检查器
