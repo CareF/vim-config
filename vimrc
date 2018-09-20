@@ -12,9 +12,9 @@ Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets'
 Plug 'ervandew/supertab'              " YCM 和 snippets 辅助
 Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-git-plugin'
 " 文件列表, on-demand load
-Plug 'w0rp/ale'                       " 语法检查器
-Plug 'xolox/vim-misc'                 " Required by vim-easytags
-Plug 'xolox/vim-easytags'             " Tag 自动生成和高亮
+" Plug 'w0rp/ale'                       " 语法检查器
+" Plug 'xolox/vim-misc'                 " Required by vim-easytags
+" Plug 'xolox/vim-easytags'             " Tag 自动生成和高亮
 Plug 'majutsushi/tagbar'              " 类/函数/方法列表
 Plug 'scrooloose/nerdcommenter'       " 添加注释助手 <Leader>cc/c<Space>...
 Plug 'tpope/vim-surround'             " 添加和修改环绕 (如括号, 引号和 XML tag)
