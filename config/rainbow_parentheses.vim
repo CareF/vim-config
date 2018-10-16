@@ -1,14 +1,21 @@
-" let g:rbpt_colorpairs = [
-" 	\ [158, '#00ceb3'],
-" 	\ [081, '#00a3ff'],
-" 	\ [214, '#ff8d00'],
-" 	\ [123, '#3fffc9'],
-" 	\ [045, '#29b9ec'],
-" 	\ [190, '#bfec29'],
-" 	\ [208, '#ffad00'],
-" 	\ [117, '#48bde0'],
-" 	\ ]
-
+let g:rbpt_colorpairs = [
+	\ ['brown',       'RoyalBlue3'],
+	\ ['Darkblue',    'SeaGreen3'],
+	\ ['darkgray',    'DarkOrchid3'],
+	\ ['darkgreen',   'firebrick3'],
+	\ ['darkcyan',    'RoyalBlue3'],
+	\ ['darkred',     'SeaGreen3'],
+	\ ['darkmagenta', 'DarkOrchid3'],
+	\ ['brown',       'firebrick3'],
+	\ ['gray',        'RoyalBlue3'], 
+	"\ ['black',       'SeaGreen3'],"
+	\ ['darkmagenta', 'DarkOrchid3'],
+	\ ['Darkblue',    'firebrick3'],
+	\ ['darkgreen',   'RoyalBlue3'],
+	\ ['darkcyan',    'SeaGreen3'],
+	\ ['darkred',     'DarkOrchid3'],
+	\ ['red',         'firebrick3'],
+	\ ]
 
 " let g:rbpt_max = 8
 let g:rbpt_loadcmd_toggle = 0
