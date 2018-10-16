@@ -5,7 +5,7 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'rking/ag.vim'              " front end for the silver_searcher
 " Plug 'kien/ctrlp.vim'            " Sublime Text Ctrl-P 
 " Plug 'Valloric/YouCompleteMe', {
-"             \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast python install.py --clang-completer --system-libclang'}
+"             \'do': 'CMAKE_CXX_FLAGS=-Ofast python install.py'}
 			" \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast LLVM_OPTS=\"$LLVM_OPTS --disable-terminfo\" python install.py --clang-completer'}
 " snippets 支持插件 | 一个 snippet 合集
 " Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets' 
