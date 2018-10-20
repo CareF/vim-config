@@ -30,7 +30,8 @@ Plug 'godlygeek/tabular'              " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
 Plug 'suan/vim-instant-markdown'      " 自动编译显示 markdown
 " Plug 'tpope/vim-fugitive'             " Git wrapper
-Plug 'vim-airline/vim-airline'        " 下方状态栏
+Plug 'vim-airline/vim-airline'        " 下方状态栏 
+" 配合'Droid Sans Mono for Powerline Regular' 字体
 Plug 'vim-airline/vim-airline-themes' " airline 官方主题
 Plug 'kien/rainbow_parentheses.vim'   " 使用不同颜色标记各级括号
 Plug 'morhetz/gruvbox'                " 主题
