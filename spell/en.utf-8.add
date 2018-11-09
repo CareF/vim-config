@@ -81,3 +81,6 @@ Schottky
 telecom
 Niobate
 reflectance
+ctypes
+numpy
+OpenMP
