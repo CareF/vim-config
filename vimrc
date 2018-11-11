@@ -14,7 +14,8 @@ Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-gi
 " 文件列表, on-demand load
 Plug 'w0rp/ale'                       " 语法检查器
 Plug 'xolox/vim-misc'                 " Required by vim-easytags
-Plug 'xolox/vim-easytags'             " Tag 自动生成和高亮
+" Plug 'CareF/vim-easytags'             " Tag 自动生成和高亮
+Plug 'ludovicchabant/vim-gutentags'   " Tag 管理
 Plug 'majutsushi/tagbar'              " 类/函数/方法列表
 Plug 'scrooloose/nerdcommenter'       " 添加注释助手 <Leader>cc/c<Space>...
 Plug 'tpope/vim-surround'             " 添加和修改环绕 (如括号, 引号和 XML tag)
@@ -206,8 +207,9 @@ source ~/.vim/config/nerdcommenter.vim
 source ~/.vim/config/supertab.vim
 source ~/.vim/config/tagbar.vim
 source ~/.vim/config/bufexplorer.vim
-source ~/.vim/config/easytags.vim
+" source ~/.vim/config/easytags.vim
 " source ~/.vim/config/syntastic.vim
+source ~/.vim/config/gutentags.vim
 source ~/.vim/config/ale.vim
 if filereadable(expand("~/.vim/config/local.vim"))
 	source ~/.vim/config/local.vim
