@@ -1,4 +1,5 @@
 /bundle/
 /config/local.vim
-/.swapfiles/*
+*.swo
+*.swp
 .netrwhist
