@@ -13,7 +13,7 @@ Plug 'ervandew/supertab'              " YCM 和 snippets 辅助
 Plug 'scrooloose/nerdtree',{'on':  'NERDTreeToggle'} | Plug 'Xuyuanp/nerdtree-git-plugin'
 " 文件列表, on-demand load
 Plug 'w0rp/ale'                       " 语法检查器
-Plug 'xolox/vim-misc'                 " Required by vim-easytags
+" Plug 'xolox/vim-misc'                 " Required by vim-easytags
 " Plug 'CareF/vim-easytags'             " Tag 自动生成和高亮
 Plug 'ludovicchabant/vim-gutentags'   " Tag 管理
 Plug 'majutsushi/tagbar'              " 类/函数/方法列表
