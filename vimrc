@@ -60,8 +60,11 @@ endif
 
 syntax on                 " 打开语法高亮
 filetype on               " 打开文件类型支持
-filetype plugin on        " 打开文件类型插件支持
+filetype plugin on        " 打开文件类型插件支持(/usr/share/vim/vim81/ftplugin, ~/.vim/after)
 filetype indent on        " 打开文件类型缩进支持
+autocmd FileType rst set foldmethod=manual  " 禁用rst文件的自动折叠, 默认设置在plugin
+autocmd BufNewFile,BufRead *.pro set filetype=make  " Qt .pro file is Makefile like
+
 
 " set hidden                        " 允许未保存的 buffer 后台
 set switchbuf=usetab,newtab       " 通过 quickfix 等行为切换 buffer 时的行为
@@ -77,7 +80,9 @@ set enc=utf-8
 
 " set textwidth=79      " 设置自动换行, 过分推广换行不好用..
 autocmd FileType c,cpp,css,h,java,m,tex,sty,python set textwidth=77
+autocmd FileType gitcommit set textwidth=50
 autocmd FileType c,cpp,css,h,java,m,tex,sty,python set colorcolumn=78
+autocmd FileType gitcommit set colorcolumn=50
 " 设置自动换行, 并在换行处显示
 set formatoptions+=mM " 允许对多字节字符换行(m), 并避免在行合并时补空格(M)
 " autocmd FileType html,conf,fstab set textwidth=0
@@ -103,9 +108,13 @@ set shiftwidth=4        " 设置缩进宽度为 4 个空格
 set tabstop=4
 set softtabstop=4
 set autoindent          " 自动缩进
+set smartindent
 set cindent             " 对于 C 系列的缩进优化
-autocmd FileType python set list lcs=tab:\¦\    " 在 tab 键时标记位置
-" set expandtab           " 按 tab 键时候自动输入空格
+" autocmd FileType python,vim set list lcs=tab:\¦\    " 在 tab 键时标记位置
+set list lcs=tab:\¦\    " 在 tab 键时标记位置
+set expandtab           " 按 tab 键时候自动输入空格
+autocmd FileType tex,md,markdown,text,sshconfig set noexpandtab
+set smarttab            " 行首缩进空格 (sw) 可能与其他位置 (ts) 不同 
 
 set ignorecase  " 搜索时，忽略大小写
 set smartcase   " 搜索时，智能大小写
@@ -113,7 +122,7 @@ set smartcase   " 搜索时，智能大小写
 set incsearch   " incremental search 
 
 " 以下文件类型, 拼写检查
-autocmd FileType tex,md,markdown setlocal spell spelllang=en_us,cjk
+autocmd FileType tex,md,markdown,rst setlocal spell spelllang=en_us,cjk
 let g:tex_comment_nospell=1      " 不检查 tex 文档的注释区域拼写 
 " 在 insert mode 快速拼写检查
 imap <F2> <Esc>[slz=`]a
