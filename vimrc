@@ -5,8 +5,9 @@ call plug#begin('~/.vim/bundle') " vim-plug 初始化
 " Plug 'rking/ag.vim'              " front end for the silver_searcher
 " Plug 'kien/ctrlp.vim'            " Sublime Text Ctrl-P 
 Plug 'Valloric/YouCompleteMe', {
-            \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast python install.py --clang-completer --system-libclang'}
-			" \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast LLVM_OPTS=\"$LLVM_OPTS --disable-terminfo\" python install.py --clang-completer'}
+            \'do': 'python3 install.py --clang-completer'}
+            " \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast python install.py --clang-completer --system-libclang'}
+            " \'do': 'CXX=clang++ CC=clang CMAKE_CXX_FLAGS=-Ofast LLVM_OPTS=\"$LLVM_OPTS --disable-terminfo\" python install.py --clang-completer'}
 " snippets 支持插件 | 一个 snippet 合集
 Plug 'SirVer/ultisnips' | Plug 'CareF/vim-snippets' 
 Plug 'ervandew/supertab'              " YCM 和 snippets 辅助
@@ -26,7 +27,7 @@ Plug 'jlanzarotta/bufexplorer'        " Buffer 切换辅助 <Leader>be
 Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
 Plug 'Vimjas/vim-python-pep8-indent'  " PEP8 风格 Python 缩进
 Plug 'jrosiek/vim-mark'               " 同时显示多个高亮关键词 <Leader>m
-Plug 'lilydjwg/fcitx.vim'             " fcitx-IME 支持
+" Plug 'lilydjwg/fcitx.vim'             " fcitx-IME 支持
 Plug 'lervag/vimtex'                  " LaTeX 支持
 Plug 'godlygeek/tabular'              " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
