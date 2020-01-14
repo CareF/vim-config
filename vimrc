@@ -17,8 +17,10 @@ Plug 'w0rp/ale'                       " 语法检查器
 " Plug 'xolox/vim-misc'                 " Required by vim-easytags
 " Plug 'CareF/vim-easytags'             " Tag 自动生成和高亮
 " Plug 'ludovicchabant/vim-gutentags'   " Tag 管理
-Plug 'CareF/vim-gutentags'   " Tag 管理
-Plug 'majutsushi/tagbar'              " 类/函数/方法列表
+" Plug 'CareF/vim-gutentags'            " Tag 管理
+" Plug 'majutsushi/tagbar'              " 类/函数/方法列表
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh'}
+                                      " 模糊搜索和 tag 管理
 Plug 'scrooloose/nerdcommenter'       " 添加注释助手 <Leader>cc/c<Space>...
 Plug 'tpope/vim-surround'             " 添加和修改环绕 (如括号, 引号和 XML tag)
 Plug 'terryma/vim-multiple-cursors'   " 类 Sublime Text 多光标
@@ -38,6 +40,7 @@ Plug 'vim-airline/vim-airline'        " 下方状态栏
 Plug 'vim-airline/vim-airline-themes' " airline 官方主题
 Plug 'kien/rainbow_parentheses.vim'   " 使用不同颜色标记各级括号
 Plug 'morhetz/gruvbox'                " 主题
+Plug 'altercation/vim-colors-solarized' " solarized 配色
 " Plug 'tomasr/molokai'                 " 主题
 call plug#end()
 
@@ -56,6 +59,7 @@ if has("gui_running")
 	inoremap <c-V> <Esc>"+pi
 	vnoremap <c-C> "+y
 else
+    " colorscheme solarized
 	set background=dark       " Or light
 endif
 
@@ -222,6 +226,7 @@ source ~/.vim/config/bufexplorer.vim
 " source ~/.vim/config/syntastic.vim
 source ~/.vim/config/gutentags.vim
 source ~/.vim/config/ale.vim
+source ~/.vim/config/leaderf.vim
 if filereadable(expand("~/.vim/config/local.vim"))
 	source ~/.vim/config/local.vim
 endif
