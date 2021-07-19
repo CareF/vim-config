@@ -1,5 +1,6 @@
 /bundle/
 /config/local.vim
+.swapfiles/.LfCache
 *.swo
 *.swp
 .netrwhist
