@@ -66,7 +66,7 @@ autocmd FileType rst set foldmethod=manual  " 禁用rst文件的自动折叠, �
 autocmd BufNewFile,BufRead *.pro set filetype=make  " Qt .pro file is Makefile like
 
 
-" set hidden                        " 允许未保存的 buffer 后台
+set hidden                        " 允许未保存的 buffer 后台
 set switchbuf=usetab,newtab       " 通过 quickfix 等行为切换 buffer 时的行为
 set directory=~/.vim/.swapfiles// " 写临时文件
 set autochdir                     " 打开文件时，自动 cd 到文件所在目录
@@ -92,7 +92,7 @@ set pastetoggle=<F9>           " 粘贴模式, 暂时关闭自动缩进
 set backspace=indent,eol,start " 在insert模式下能用删除键进行删除到上一行
 set whichwrap=b,s,<,>,[,]      " 移动光标时运行跨行
 " 以下文件类型，敲 {<回车> 后，自动加入反括号 }
-autocmd FileType c,cpp,css,h,java,js,nginx,scala,go,m,tex,bib,sty inoremap  <buffer>  {<CR> {<CR>}<Esc>O
+autocmd FileType c,cpp,css,h,java,js,json,nginx,scala,go,m,tex,bib,sty inoremap  <buffer>  {<CR> {<CR>}<Esc>O
 
 set number                " 显示行号
 set scrolloff=4           " 光标移动到倒数第5行时开始滚屏
@@ -112,11 +112,12 @@ set smartindent
 set cindent             " 对于 C 系列的缩进优化
 " autocmd FileType python,vim set list lcs=tab:\¦\    " 在 tab 键时标记位置
 set list lcs=tab:\¦\    " 在 tab 键时标记位置
-set expandtab           " 按 tab 键时候自动输入空格
-autocmd FileType tex,md,markdown,text,sshconfig set noexpandtab
+" set expandtab           " 按 tab 键时候自动输入空格
+" autocmd FileType tex,md,markdown,text,sshconfig set noexpandtab
+autocmd FileType c,cpp,py set expandtab
 set smarttab            " 行首缩进空格 (sw) 可能与其他位置 (ts) 不同 
 
-set ignorecase  " 搜索时，忽略大小写
+" set ignorecase  " 搜索时，忽略大小写
 set smartcase   " 搜索时，智能大小写
 " set nohlsearch  " 关闭搜索高亮
 set incsearch   " incremental search 
@@ -224,3 +225,7 @@ source ~/.vim/config/ale.vim
 if filereadable(expand("~/.vim/config/local.vim"))
 	source ~/.vim/config/local.vim
 endif
+
+" enable project specific .vimrc
+set secure
+set exrc
