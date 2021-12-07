@@ -18,7 +18,7 @@ Plug 'w0rp/ale'                       " 语法检查器
 " Plug 'ludovicchabant/vim-gutentags'   " Tag 管理
 " Plug 'CareF/vim-gutentags'            " Tag 管理
 " Plug 'majutsushi/tagbar'              " 类/函数/方法列表
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh'}
+" Plug 'Yggdroot/LeaderF', { 'do': './install.sh'}
                                       " 模糊搜索和 tag 管理
 Plug 'scrooloose/nerdcommenter'       " 添加注释助手 <Leader>cc/c<Space>...
 Plug 'tpope/vim-surround'             " 添加和修改环绕 (如括号, 引号和 XML tag)
@@ -28,7 +28,7 @@ Plug 'jlanzarotta/bufexplorer'        " Buffer 切换辅助 <Leader>be
 Plug 'Yggdroot/indentLine'            " 在缩进语言前加对齐竖线
 Plug 'Vimjas/vim-python-pep8-indent'  " PEP8 风格 Python 缩进
 Plug 'jrosiek/vim-mark'               " 同时显示多个高亮关键词 <Leader>m
-Plug 'lilydjwg/fcitx.vim'             " fcitx-IME 支持
+" Plug 'lilydjwg/fcitx.vim'             " fcitx-IME 支持
 Plug 'lervag/vimtex'                  " LaTeX 支持
 Plug 'godlygeek/tabular'              " Required by vim-markdown
 Plug 'plasticboy/vim-markdown'        " Markdown 整理和语法高亮
